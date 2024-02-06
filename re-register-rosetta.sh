@@ -21,7 +21,7 @@ echo "Rosetta is not correctly registered. Re-registering rosetta..."
 [ -f /proc/sys/fs/binfmt_misc/rosetta ] && echo -1 >/proc/sys/fs/binfmt_misc/rosetta
 
 # register Rosetta
-echo ':rosetta:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/run/rosetta/rosetta:OCF'>/proc/sys/fs/binfmt_misc/register
+[ -w /proc/sys/fs/binfmt_misc/register ] && echo ':rosetta:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/run/rosetta/rosetta:OCF'>/proc/sys/fs/binfmt_misc/register
 
 # umount /proc/sys/fs/binfmt_misc
 umount /proc/sys/fs/binfmt_misc
