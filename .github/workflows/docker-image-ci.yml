@@ -7,12 +7,14 @@ on:
     paths: 
       - '.github/workflows/docker-image-ci.yml'
       - 'Dockerfile'
-      - '*.{c,sh}'
+      - '*.c'
+      - '*.sh'
   pull_request:
     paths:
       - '.github/workflows/docker-image-ci.yml'
       - 'Dockerfile'
-      - '*.{c,sh}'
+      - '*.c'
+      - '*.sh'
 
 jobs:
   build:
